@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.6)  5 JAN 2018 12:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.6)  13 JAN 2018 11:05
 entering extended mode
 **./nn.tex
 (nn.tex
@@ -787,25 +787,25 @@ LaTeX Warning: No \author given.
 
 LaTeX Warning: No \author given.
 
-<images/nn/111.png, id=18, 362.10281pt x 86.57344pt>
+<images/nn/111.png, id=22, 362.10281pt x 86.57344pt>
 File: images/nn/111.png Graphic file (type png)
  <use images/nn/111.png>
 Package pdftex.def Info: images/nn/111.png used on input line 89.
 (pdftex.def)             Requested size: 252.0pt x 60.24959pt.
 
-<images/nn/131.png, id=19, 459.21562pt x 316.18124pt>
+<images/nn/131.png, id=23, 459.21562pt x 316.18124pt>
 File: images/nn/131.png Graphic file (type png)
  <use images/nn/131.png>
 Package pdftex.def Info: images/nn/131.png used on input line 103.
 (pdftex.def)             Requested size: 252.0pt x 173.50943pt.
 
-<images/nn/212.png, id=20, 459.21562pt x 316.18124pt>
+<images/nn/212.png, id=24, 459.21562pt x 316.18124pt>
 File: images/nn/212.png Graphic file (type png)
  <use images/nn/212.png>
 Package pdftex.def Info: images/nn/212.png used on input line 116.
 (pdftex.def)             Requested size: 252.0pt x 173.50943pt.
 
-<images/nn/212loss.png, id=21, 358.33875pt x 357.58594pt>
+<images/nn/212loss.png, id=25, 358.33875pt x 357.58594pt>
 File: images/nn/212loss.png Graphic file (type png)
 
 <use images/nn/212loss.png>
@@ -815,12 +815,30 @@ Package pdftex.def Info: images/nn/212loss.png used on input line 138.
 
 
  <./images/nn/111.png> <./images/nn/131.png> <./images/nn/212.png>]
-<images/nn/212r.png, id=43, 358.33875pt x 357.58594pt>
+<images/nn/212r.png, id=47, 358.33875pt x 357.58594pt>
 File: images/nn/212r.png Graphic file (type png)
 
 <use images/nn/212r.png>
 Package pdftex.def Info: images/nn/212r.png used on input line 155.
 (pdftex.def)             Requested size: 252.0pt x 251.47609pt.
+ <images/nn/222.png, id=50, 338.01282pt x 197.23688pt>
+File: images/nn/222.png Graphic file (type png)
+
+<use images/nn/222.png>
+Package pdftex.def Info: images/nn/222.png used on input line 166.
+(pdftex.def)             Requested size: 252.0pt x 147.05148pt.
+ [2 <./images/nn/212loss.png> <./images/nn/212r.png> <./images/nn/222.png>]
+Overfull \hbox (21.36826pt too wide) in paragraph at lines 202--202
+[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (63.43253pt too wide) in paragraph at lines 224--224
+[] 
+ []
 
 No file nn.bbl.
 
@@ -834,35 +852,37 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 170.
-[2 <./images/nn/212loss.png> <./images/nn/212r.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 170.
+[3]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 250.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 250.
  (nn.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 170.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 170.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 250.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 250.
 Package rerunfilecheck Info: File `nn.out' has not changed.
-(rerunfilecheck)             Checksum: 564748074CFED0B6B00E768BADACFE32;205.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 170.
+(rerunfilecheck)             Checksum: 1C0C0618187D7802DED04E53A7927331;251.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 250.
  ) 
 Here is how much of TeX's memory you used:
- 17700 strings out of 493335
- 330401 string characters out of 3136678
- 402668 words of memory out of 3000000
- 20919 multiletter control sequences out of 15000+200000
- 31247 words of font info for 62 fonts, out of 3000000 for 9000
+ 17717 strings out of 493335
+ 330581 string characters out of 3136678
+ 410711 words of memory out of 3000000
+ 20925 multiletter control sequences out of 15000+200000
+ 32354 words of font info for 63 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,9n,56p,956b,315s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,9n,56p,956b,430s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/urw/times/utmr8a.pfb>
-Output written on nn.pdf (2 pages, 142317 bytes).
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/u
+rw/times/utmr8a.pfb>
+Output written on nn.pdf (3 pages, 171511 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
- 18 named destinations out of 1000 (max. 500000)
- 62 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 111 PDF objects out of 1000 (max. 8388607)
+ 27 named destinations out of 1000 (max. 500000)
+ 75 words of extra memory for PDF output out of 10000 (max. 10000000)
 

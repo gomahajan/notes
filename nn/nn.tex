@@ -136,8 +136,8 @@ r1 = 0 &\iff x < -y
 
 \begin{figure}
 	\includegraphics[width=\linewidth]{images/nn/212loss.png}
-	\caption{2,1,2 Loss NN}
-	\label{fig:212loss}
+	\caption{Neuron behavior}
+	\label{fig:nnbehave}
 \end{figure}
 
 Region I ($x<0$ and $x>-y$) has neuron working only for example x1, region II ($x>0$ and $x<-y$) has neuron working only for example x0, region III ($x>0$ and $x>-y$) has the neuron working for both examples and region IV has neuron turned off for both examples.
@@ -159,6 +159,86 @@ This is an equation of a line. a00 and a01 which satisfy this equation and lie i
 
 The natural question is would gradient descent fall in these local minimas. If you start from region I, would always lead to these minimas? Would starting from region III, safeguard convergence to global minima?
 
+\section{2,2,2 case}
+\ref{fig:nnbehave} shows the behavior of a relu neuron. 2,2,2 has two relu neurons and we can imagine them to be two points. This allows us to divide the analysis into 6 independent cases (I will refer to global minima for the all cases as $G_{all}$). \ref{fig:222} shows the running example for analysis. Output from neuron 1 for both examples ($k_1$, $r_1$). Output from neuron 2 for both examples ($k_2$, $r_2$). Expected output: ($y_1$, $y_2$) and ($y_3$, $y_4$).  
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{images/nn/222.png}
+	\caption{2,2,2 local minima}
+	\label{fig:222}
+\end{figure}
+
+\begin{enumerate}
+	\item \textbf{Both lie in region III}: This is similar to linear neural network. Global minima in this region is $G_{all}$ .
+	\item \textbf{One lies in region III and another lies in region IV}: This implies one is turned on for both examples and other is turned off for both. This is essentially equal to network with one \textbf{linear} neuron (2,1,2). Global minima in this region is equal to global minima for 1 neuron network. 
+	\begin{align*}
+	L = &(k_2 * w_3 - y_1)^2 + (k_2 * w_4 - y_2)^2\\  
+	&+ (r_2*w_3 - y_3)^2 + (r_2*w_4 - y_4)^2\\ 
+	\end{align*}
+	Local minimas (since it is linear 2,1,2) in this region are same as global minima in this region. This will be different than $G_{all}$ when 1-neuron network does not give zero loss (ie when the outputs are linearly independent).
+	
+	\item \textbf{One lies in region I/II and another lies in region IV}: This means one neuron is turned off for one example and other neuron is turned off for both. Similar to the local minima case discussed in 2,1,2.
+	
+	\begin{align*}
+	L = &(k_1 * w_1- y_1)^2 + (k_1 * w_2 - y_2)^2\\  
+	&+ (y_3)^2 + (y_4)^2\\
+	\end{align*}
+	
+	\item \textbf{One lies in region I/II and another lies in region III}: In this case, one neuron is turned off for one example ($r_1 = 0$) and other is on for both examples.
+	\begin{align*}
+		L = &(k_1 * w_1 + k_2 * w_3 - y_1)^2 + (k_1 * w_2 + k_2 * w_4 - y_2)^2\\  
+		&+ (r_2*w_3 - y_3)^2 + (r_2*w_4 - y_4)^2\\
+	\end{align*}
+	
+	\begin{align*}
+		\frac{dL}{dw_1} &= 2(k_1*w_1 + k_2*w_3 - y_1)* k_1 = 0\\ 
+		&\implies k_1*w_1 + k_2*w_3 = y_1\\
+		\frac{dL}{dw_2} &= 2(k_1*w_2 + k_2*w_4 - y_2)* k_1 = 0\\ 
+		&\implies k_1*w_2 + k_2*w_4 = y_2\\
+		\frac{dL}{dw_3} &= 2(k_1*w_1 + k_2*w_3 - y_1)* k_2 + 2(r_2*w_3-y_3)*r_2 = 0\\
+		&\implies r_2*w_3 = y_3\\
+		\frac{dL}{dw_4} &= 2(k_1*w_2 + k_2*w_4 - y_2)* k_2 + 2(r_2*w_4-y_4)*r_2 = 0\\ 
+		&\implies r_2*w_4 = y_4\\
+	\end{align*}
+	That is all derivatives equal to zero implies loss should be zero. So, local minima in this region is same as global minima in this region. And this global minima is equal to $G_{all}$.
+	\item \textbf{One lies in region I/II and another lies in region II/I}:  In this case, one neuron is turned off for one example ($r_1 = 0$) and other is off for other different example ($k_2 = 0$).
+	\begin{align*}
+	L  = &(k_1 * w_1 - y_1)^2 + (k_1 * w_2 - y_2)^2\\ 
+	 &+ (r_2*w_3 - y_3)^2 + (r_2*w_4 - y_4)^2
+	\end{align*}
+	\begin{align*}
+	\frac{dL}{dw_1} &= 2(k_1*w_1 - y_1)* k_1 = 0\\ 
+	&\implies k_1*w_1 = y_1\\
+	\frac{dL}{dw_2} &= 2(k_1*w_2 - y_2)* k_1 = 0\\ 
+	&\implies k_1*w_2 = y_2\\
+	\frac{dL}{dw_3} &= 2(r_2*w_3-y_3)*r_2 = 0\\
+	&\implies r_2*w_3 = y_3\\
+	\frac{dL}{dw_4} &= 2(r_2*w_4-y_4)*r_2 = 0\\ 
+	&\implies r_2*w_4 = y_4\\
+	\end{align*}
+	Same as before, that is all derivatives equal to zero implies loss should be zero. So, local minima in this region is same as global minima in this region. And this global minima is equal to $G_{all}$.
+	\item \textbf{Both lie in region I/II}: In this case, both neurons are turned off for one example ($r_1 = 0$ and $r_2 = 0$ ) and turned on for other example. 
+	\begin{align*}
+	L &= (k_1 * w_1 + k_2 * w_3 - y_1)^2 + (k_1 * w_2 + k_2 * w_4 - y_2)^2 + (y_3)^2 + (y_4)^2 \\ 
+	L &\geq (y_3)^2 + (y_4)^2
+	\end{align*}
+	
+	\begin{align*}
+	\frac{dL}{dw_1} &= 2(k_1*w_1 + k_2*w_3 - y_1)* k_1 = 0\\ 
+	&\implies k_1*w_1 + k_2*w_3 = y_1\\
+	\frac{dL}{dw_2} &= 2(k_1*w_2 + k_2*w_4 - y_2)* k_1 = 0\\ 
+	&\implies k_1*w_2 + k_2*w_4 = y_2\\
+	\frac{dL}{dw_3} &= 2(k_1*w_1 + k_2*w_3 - y_1)* k_2 = 0\\
+	&\implies k_1*w_1 + k_2*w_3 = y_1\\
+	\frac{dL}{dw_4} &= 2(k_1*w_2 + k_2*w_4 - y_2)* k_2 = 0\\ 
+	&\implies  k_1*w_2 + k_2*w_4 = y_2\\
+	\end{align*}
+	
+	All local minimas are global minimas in this region. Also, the global minima for this region would be local minima for all cases, since this region's loss will be grater than norm of 2nd example's expected result.
+	
+\end{enumerate}
+
+This finishes the characterization of all local minimas for 2,2,2 neural network (other than 2,1,2 case). Local minimas (different from global minima) can only exist in case 2, 3 and 6.
 
 \section*{Acknowledgments}
 
